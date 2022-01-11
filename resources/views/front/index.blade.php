@@ -40,7 +40,7 @@
                             <a class="nav-link active" href="#">Contact</a>
                         </li>
                         <li class="nav-item  d-flex">
-                            <a class="nav-link active px-2" href="cart-1.html"><i class="fas fa-shopping-cart fa-2x"></i></a>
+                            <a class="nav-link active px-2" href="/shopping01"><i class="fas fa-shopping-cart fa-2x"></i></a>
                             <a class="nav-link active px-2" href="#"><i class="fas fa-user-circle fa-2x "></i></a>
                         </li>
                     </ul>
@@ -173,7 +173,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-  
+    <script>
+        function addtocart(product_id){
+            var formdata = new FormData()
+            formdata.append('_token', ' {{csrf_token()}}')
+            formdata.append('product_id', product_id)
+
+            fetch('/addtocart', {
+                method: 'POST',
+                body: formdata
+            })
+            .then(response => response.text())
+            .then(text => {
+                alert(text)
+            });
+        }
+
+    </script>
 </body>
 
 </html>

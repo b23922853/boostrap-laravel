@@ -20,6 +20,15 @@ use Illuminate\Support\Facades\Route;
 
 // 前台 (不須登入)
 Route::get('/', 'FrontController@index');
+Route::get('/shopping01', 'FrontController@shopping_01');
+Route::post('/shopping02', 'FrontController@shopping_02');
+Route::post('/shopping03', 'FrontController@shopping_03');
+Route::post('/store', 'FrontController@store');
+Route::get('/shopping04/{id}', 'FrontController@shopping_04');
+
+Route::post('/addtocart', 'FrontController@addtocart');
+Route::post('/deletetocart', 'FrontController@deletetocart');
+
 
 
 

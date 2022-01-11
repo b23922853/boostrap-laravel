@@ -98,155 +98,49 @@
                     </div>
                 </div>
             </section>
-            <section>
-                <div class="items d-flex flex-wrap pt-3">
-                    <h3>付款方式</h3>
-                    <div class="item d-flex align-items-center w-100 border-bottom mt-3 pb-3">
-                        <input type="radio" name="g1" id="">
-                        <span class="ms-2">信用卡付款</span>
+            <form action="/shopping03" method="POST">
+                @csrf
+                <section>
+                    <div class="items d-flex flex-wrap">
+                        <h3>運送方式</h3>
+                        <div class="item d-flex align-items-center w-100 border-bottom mt-3 pb-3">
+                            <input type="radio" name="shipway" value="1" id="cat" onclick="changefee(1)" checked>
+                            <span class="ms-2">黑貓宅配</span>
+                        </div>
+                        <div class="item d-flex align-items-center w-100 border-bottom mt-3 pb-5 ">
+                            <input type="radio" name="shipway" value="2" id="shop" onclick="changefee(2)">
+                            <span class="ms-2">超商店到店</span>
+                        </div>
                     </div>
-
-                    <div class="item d-flex align-items-center w-100 border-bottom mt-3 pb-3">
-                        <input type="radio" name="g1" id="">
-                        <span class="ms-2">網路 ATM</span>
+                </section>
+                <section>
+                    <div class="unify d-flex flex-column align-items-end pt-3 pb-3 border-bottom w-100">
+                        <div class="count w-25 d-flex justify-content-between mb-2">
+                            <label for="">商品數量:</label>
+                            <span>{{$merch}}</span>
+                        </div>
+                        <div class="subtotal  w-25 d-flex justify-content-between mb-2">
+                            <label for="">商品小計:</label>
+                            <span id="subtotal">{{$sum}}</span>
+                        </div>
+                        <div class="freight  w-25 d-flex justify-content-between mb-2">
+                            <label for="">運費:</label>
+                            <span id="shipfee">200</span>
+                        </div>
+                        <div class="total  w-25 d-flex justify-content-between">
+                            <label for="">總計:</label>
+                            <span id="total">{{$sum + 200}}</span>
+                        </div>
                     </div>
-                    <div class="item d-flex align-items-center w-100  border-bottom mt-3 mb-4 pb-3">
-                        <input type="radio" name="g1" id="">
-                        <span class="ms-2">超商代碼</span>
+                    <div class="buttons  mt-5 d-flex justify-content-between">
+                        <a href="cart-1.html"><button type="button" class="btn btn-outline-primary">上一步</button></a>
+                        <button type="submit" class="btn btn-primary">下一步</button>
                     </div>
-                </div>
-                <div class="items d-flex flex-wrap">
-                    <h3>運送方式</h3>
-                    <div class="item d-flex align-items-center w-100 border-bottom mt-3 pb-3">
-                        <input type="radio" name="g2" id="">
-                        <span class="ms-2">黑貓宅配</span>
-                    </div>
-
-                    <div class="item d-flex align-items-center w-100 border-bottom mt-3 pb-5 ">
-                        <input type="radio" name="g2" id="">
-                        <span class="ms-2">超商店到店</span>
-                    </div>
-
-                </div>
-            </section>
-            <section>
-                <div class="unify d-flex flex-column align-items-end pt-3 pb-3 border-bottom w-100">
-                    <div class="count w-25 d-flex justify-content-between mb-2">
-                        <label for="">數量:</label>
-                        <span>3</span>
-                    </div>
-                    <div class="subtotal  w-25 d-flex justify-content-between mb-2">
-                        <label for="">小計:</label>
-                        <span>$24.90</span>
-                    </div>
-                    <div class="freight  w-25 d-flex justify-content-between mb-2">
-                        <label for="">運費:</label>
-                        <span>$24.90</span>
-                    </div>
-                    <div class="total  w-25 d-flex justify-content-between">
-                        <label for="">總計:</label>
-                        <span>$24.90</span>
-                    </div>
-                </div>
-                <div class="buttons  mt-5 d-flex justify-content-between">
-                    <a href="cart-1.html"><button type="button" class="btn btn-outline-primary">上一步</button></a>
-                    <a href="cart-3.html"><button type="button" class="btn btn-primary">下一步</button></a>
-                </div>
-
-            </section>
+                </section>
+            </form>
         </div>
     </section>
     <footer>
-        <div class="container d-flex py-5  mb-5 flex-wrap">
-            <div
-                class="left-block mb-3 mb-md-0 d-flex flex-column align-items-center align-items-md-start justify-content-md-center mb-5 col-12 col-md-4 col-lg-4 text-center text-md-start">
-                <a class="text-decoration-none fs-3 mb-3" href="">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
-                        <defs>
-                            <style>
-                                .cls-1 {
-                                    fill: #162446;
-                                }
-
-                                .cls-2 {
-                                    fill: #fff;
-                                }
-                            </style>
-                        </defs>
-                        <title>資產 2</title>
-                        <g id="圖層_2" data-name="圖層 2">
-                            <g id="圖層_1-2" data-name="圖層 1">
-                                <circle class="cls-1" cx="20" cy="20" r="20"></circle>
-                                <path class="cls-2"
-                                    d="M20,7l7.13,4.11a7.91,7.91,0,0,1,3.95,6.84v6.8l-8.61-5V18.32l7.37,4.26V18.63a7.89,7.89,0,0,0-3.95-6.85L21.28,9.1V33.25L9,26.14V13.35l5.89,3.4a7.91,7.91,0,0,1,3.95,6.85v4.76l-1.23-.71V24.31a7.92,7.92,0,0,0-4-6.85l-3.42-2v9.94L20,31.11Z">
-                                </path>
-                            </g>
-                        </g>
-                    </svg>
-                    <span class="text-dark">數位方塊</span>
-                </a>
-                <p>Air plant banjo lyft occupy retro adaptogen indego</p>
-            </div>
-            <div
-                class="right-block d-flex  flex-wrap align-items-center justify-content-center col-12 col-md-8  col-lg-8 ">
-                <ul class="list-group col-12 mb-3 col-md-6 col-lg-3 align-items-center">CATEGORIES
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">First
-                            Link</a>
-                    </li>
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">Second
-                            Link</a>
-                    </li>
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">Third
-                            Link</a>
-                    </li>
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">Fourth
-                            Link</a>
-                    </li>
-                </ul>
-                <ul class="list-group col-12 mb-3 col-md-6 col-lg-3 align-items-center">CATEGORIES
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">First
-                            Link</a>
-                    </li>
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">Second
-                            Link</a>
-                    </li>
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">Third
-                            Link</a>
-                    </li>
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">Fourth
-                            Link</a>
-                    </li>
-                </ul>
-                <ul class="list-group col-12 mb-3 col-md-6 col-lg-3 align-items-center">CATEGORIES
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">First
-                            Link</a>
-                    </li>
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">Second
-                            Link</a>
-                    </li>
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">Third
-                            Link</a>
-                    </li>
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">Fourth
-                            Link</a>
-                    </li>
-                </ul>
-                <ul class="list-group col-12  mb-3 col-md-6 col-lg-3 align-items-center">CATEGORIES
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">First
-                            Link</a>
-                    </li>
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">Second
-                            Link</a>
-                    </li>
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">Third
-                            Link</a>
-                    </li>
-                    <li class="list-group-item border-0 ps-0"><a href="" class="text-decoration-none text-dark">Fourth
-                            Link</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
         <div class="full d-flex bg-light">
             <div class="container">
                 <div class="under-footer d-flex  w-100 m-3 flex-column  flex-sm-row align-items-center">
@@ -295,11 +189,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>!-->
+    
+        <script>
+            function changefee(shipway){
+                if (shipway == 1){
+                    document.querySelector('#shipfee').innerHTML = "200"
+                    document.querySelector('#total').innerHTML = parseInt(document.querySelector('#subtotal').innerHTML) + 200
+                }else{
+                    document.querySelector('#shipfee').innerHTML = "60"
+                    document.querySelector('#total').innerHTML = parseInt(document.querySelector('#subtotal').innerHTML) + 60
+                }
+
+
+            }
+        </script>
 </body>
 
 </html>

@@ -98,53 +98,36 @@
                     </div>
                 </div>
             </section>
-            <section>
-                <div class="items d-flex flex-wrap flex-column">
-                    <h3>寄送資料</h3>
-                    <div class="name d-flex flex-wrap">
-                        <label for="">姓名</label>
-                        <input type="text" class="w-100 px-3 py-2" name="" id="" placeholder="王小明">
+            <form action="/store" method="post">
+                @csrf
+                <section>
+                    <div class="items d-flex flex-wrap flex-column">
+                        <h3>寄送資料</h3>
+                        <div class="name d-flex flex-wrap">
+                            <label for="username">姓名</label>
+                            <input type="text" class="w-100 px-3 py-2" name="username" id="username" placeholder="王小明">
+                        </div>
+                        <div class="phone d-flex flex-wrap">
+                            <label for="phone">電話</label>
+                            <input type="text" class="w-100 px-3 py-2" name="phone" id="phone" placeholder="0912345678">
+                        </div>
+                        <div class="email d-flex flex-wrap">
+                            <label for="email">Email</label>
+                            <input type="email" class="w-100 px-3 py-2" name="email" id="email" placeholder="abc123@gmail.com">
+                        </div>
+                        <div class="email d-flex flex-wrap mb-4 pb-5 border-bottom">
+                            <label for="address" class="w-100 ">地址</label>
+                            <input type="text" class="w-100 px-3 py-2" name="address" id="address" placeholder="地址">
+                        </div>
                     </div>
-                    <div class="phone d-flex flex-wrap">
-                        <label for="">電話</label>
-                        <input type="number" class="w-100 px-3 py-2" name="" id="" placeholder="0912345678">
+                </section>
+                <section>
+                    <div class="buttons  mt-4 d-flex justify-content-between">
+                        <a href="cart-2.html"><button type="button" class="btn btn-outline-primary">上一步</button></a>
+                        <button type="submit" class="btn btn-primary">前往付款</button>
                     </div>
-                    <div class="email d-flex flex-wrap">
-                        <label for="">Email</label>
-                        <input type="email" class="w-100 px-3 py-2" name="" id="" placeholder="abc123@gmail.com">
-                    </div>
-                    <div class="email d-flex flex-wrap mb-4 pb-5 border-bottom">
-                        <label for="" class="w-100 ">地址</label>
-                        <input type="email" class="city px-3 py-2" name="" id="" placeholder="城市">
-                        <input type="email" class="postal px-3 py-2" name="" id="" placeholder="郵遞區號">
-                        <input type="email" class="w-100 px-3 py-2" name="" id="" placeholder="地址">
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="unify d-flex flex-column align-items-end  pb-3 border-bottom w-100">
-                    <div class="count w-25 d-flex justify-content-between mb-2">
-                        <label for="">數量:</label>
-                        <span>3</span>
-                    </div>
-                    <div class="subtotal  w-25 d-flex justify-content-between mb-2">
-                        <label for="">小計:</label>
-                        <span>$24.90</span>
-                    </div>
-                    <div class="freight  w-25 d-flex justify-content-between mb-2">
-                        <label for="">運費:</label>
-                        <span>$24.90</span>
-                    </div>
-                    <div class="total  w-25 d-flex justify-content-between pb-3">
-                        <label for="">總計:</label>
-                        <span>$24.90</span>
-                    </div>
-                </div>
-                <div class="buttons  mt-4 d-flex justify-content-between">
-                    <a href="cart-2.html"><button type="button" class="btn btn-outline-primary">上一步</button></a>
-                    <a href="cart-4.html"><button type="button" class="btn btn-primary">前往付款</button></a>
-                </div>
-            </section>
+                </section>
+            </form>
         </div>
     </section>
     <footer>
