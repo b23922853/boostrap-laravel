@@ -22,7 +22,7 @@ class BlogController extends Controller
 
 
     public function store(Request $request){
-        dd($request->all());
+
 
 
         // 藉由model操作資料庫
