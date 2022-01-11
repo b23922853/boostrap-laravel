@@ -17,8 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 // 測試用路由
 
-Route::get('/save','FrontController@index');
-
 
 // 前台 (不須登入)
 Route::get('/', 'FrontController@index');
