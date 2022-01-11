@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/save','FrontController@index');
 
-Route::get('/save','FrontController@index');
 
 // 前台 (不須登入)
 Route::get('/', 'FrontController@index');
