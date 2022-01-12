@@ -120,4 +120,9 @@ class FrontController extends Controller
     }
 
 
+    public function dummy(){
+        
+    }
+
+
 }
