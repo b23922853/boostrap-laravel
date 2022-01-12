@@ -67,7 +67,6 @@ class FrontController extends Controller
             $shipfee = 60;
         }
 
-
         $order = Order::create([
             'total_price' => $total,
             'shipping_fee' => $shipfee, 
@@ -90,11 +89,10 @@ class FrontController extends Controller
         Session::forget('step01');
         Session::forget('step02');
     
-        return redirect('/shopping04/'. $order);
+        return redirect('/orderlookup/'. $order->id);
     }
 
     public function shopping_04($id){
-        
         $order = Order::find($id);
         return view('front.cart-4', compact('order'));
     }

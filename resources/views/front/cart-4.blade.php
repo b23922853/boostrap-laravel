@@ -221,7 +221,7 @@
                         <span>{{$order->total_price}}</span>
                     </div>
                 </div>
-                <a href="index.html">
+                <a href="/">
                     <button type="button" class="btn btn-primary mt-5">返回首頁</button>
                 </a>
                 <a href="">
