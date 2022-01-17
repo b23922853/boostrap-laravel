@@ -31,7 +31,10 @@ Route::post('/addtocart', 'FrontController@addtocart');
 Route::post('/deletetocart', 'FrontController@deletetocart');
 
 
+Route::get('/trade/{order_id}', 'FrontController@trade');
+Route::get('/moneyNotify', 'FrontController@moneyNotify');
 
+Route::get('/mail', 'FrontController@mail');
 
 
 //後台 (需要登入)

@@ -224,7 +224,7 @@
                 <a href="/">
                     <button type="button" class="btn btn-primary mt-5">返回首頁</button>
                 </a>
-                <a href="">
+                <a href="/trade/{{$order->id}}">
                     <button type="button" class="btn btn-primary mt-5">金流結帳</button>
                 </a>
                 
